@@ -11,6 +11,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: go-app-1
+  description: "Sample GO application created by scaffold"
   links:
     - url: https://dashboard.example.com
       title: Admin Setting
