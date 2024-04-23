@@ -19,3 +19,4 @@ To deploy this server, follow these steps:
 - Update the file to add the value as 
 
 3. Trigger the workflow manually
+test
