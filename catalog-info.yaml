@@ -1,0 +1,94 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-system
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: marketplace
+spec:
+  owner: "group:default/mcmuralishclint"
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: go-clean-code
+  links:
+    - url: https://dashboard.example.com
+      title: Admin Setting
+      icon: dashboard
+  annotations:
+    github.com/project-slug: mcmuralishclint/my-go-app
+    github.com/actions-workflow: https://github.com/mcmuralishclint/my-go-app/actions
+    backstage.io/kubernetes-id: go-clean-code
+spec:
+  type: service
+  lifecycle: experimental
+  owner: "group:default/mcmuralishclint"
+  system: marketplace
+  providesApis: [api1, api2, api3]
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: api1
+spec:
+  type: http
+  lifecycle: experimental
+  owner: "group:default/mcmuralishclint"
+  system: marketplace
+  definition: |
+    openapi: "3.0.0"
+    info:
+      title: "API 1"
+      version: "1.0.0"
+    paths:
+      /api1:
+        get:
+          summary: "Endpoint for API 1"
+          responses:
+            '200':
+              description: "Successful response"
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: api2
+spec:
+  type: http
+  lifecycle: experimental
+  owner: "group:default/mcmuralishclint"
+  system: marketplace
+  definition: |
+    openapi: "3.0.0"
+    info:
+      title: "API 2"
+      version: "1.0.0"
+    paths:
+      /api2:
+        get:
+          summary: "Endpoint for API 2"
+          responses:
+            '200':
+              description: "Successful response"
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: api3
+spec:
+  type: http
+  lifecycle: experimental
+  owner: "group:default/mcmuralishclint"
+  system: marketplace
+  definition: |
+    openapi: "3.0.0"
+    info:
+      title: "API 3"
+      version: "1.0.0"
+    paths:
+      /api3:
+        get:
+          summary: "Endpoint for API 3"
+          responses:
+            '200':
+              description: "Successful response"
