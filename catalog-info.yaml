@@ -2,7 +2,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
-  name: marketplace
+  name: RND
 spec:
   owner: "group:default/mcmuralishclint"
 ---
